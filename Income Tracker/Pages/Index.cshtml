@@ -4,11 +4,35 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core Test</a>.</p>
-</div>
-
 <a button type="button" class="btn btn-success" asp-area="" asp-page="/Create">
     Add Record
 </a>
+
+<table id="records" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Records[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Records[0].Quantity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var record in Model.Records) 
+        {
+            <tr class="list-row">
+                <td>
+                    @Html.DisplayFor(modelItem => record.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => record.Quantity)
+                </td>
+                <td>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
