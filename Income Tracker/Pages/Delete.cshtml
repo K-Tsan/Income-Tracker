@@ -1,0 +1,29 @@
+﻿@page
+@model Income_Tracker.Pages.DeleteModel
+@{
+}
+
+<h3>Are you sure you want to delete the following record?</h3>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IncomeTracker.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IncomeTracker.Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IncomeTracker.Quantity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IncomeTracker.Quantity)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="IncomeTracker.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /><br />
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
